@@ -13,10 +13,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 import Numadics.QATest.PageObject.CareersPage;
 import Numadics.QATest.PageObject.InputPage;
@@ -29,14 +33,14 @@ public class Regression {
 	JavascriptExecutor js= (JavascriptExecutor)driver;
 	
 	@BeforeClass
-	public void login() {
-		
+	public void login() {		
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\varsh\\Downloads\\chromedriver\\chromedriver.exe");
 		driver.get("https://jobs.numadic.com/jobs/Careers");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(25));
 		driver.manage().window().maximize();
 			
 	}
+	
 	
 	@Test(priority=1)
 	public void verifyTitle() throws InterruptedException {
@@ -53,7 +57,6 @@ public class Regression {
 	
 	@Test(priority=2)
 	public void dropDown() {
-		
 		js.executeScript("window.scrollBy(0,550)");
 		CareersPage cp = new CareersPage(driver);		
 		cp.ClickFilter();
