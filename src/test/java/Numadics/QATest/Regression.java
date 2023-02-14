@@ -107,7 +107,6 @@ public class Regression {
 		driver.findElement(By.xpath("//*[@data-value=\"Fresher\"]")).click();
 		softAssert.assertEquals(driver.findElement(By.xpath("(//*[@error-message=\"Skill Set cannot be empty.\"])[1]")).getText(), "Skill Set cannot be empty.");
 		driver.findElement(By.id("addSkills")).click();
-
 		driver.findElement(By.id("addSkills")).sendKeys("sel");
 
 		Thread.sleep(2000);
@@ -122,13 +121,10 @@ public class Regression {
 		
 		js.executeScript("window.scrollBy(0,800)");
 		softAssert.assertEquals(driver.findElement(By.xpath("//span[@data-zcqa=\"Current_CTCError\"]")).getText(), "Current CTC cannot be empty.");
-		driver.findElement(By.id("rec-form_53264000000285107")).sendKeys("6.5");
-		
+		driver.findElement(By.id("rec-form_53264000000285107")).sendKeys("6.5");	
 		softAssert.assertEquals(driver.findElement(By.xpath("//span[@data-zcqa=\"Expected_CTCError\"]")).getText(), "Expected CTC cannot be empty.");
 		driver.findElement(By.id("rec-form_53264000000285115")).sendKeys("10.5");
-		
-		softAssert.assertEquals(driver.findElement(By.xpath("//span[@data-zcqa=\"Notice_PeriodError\"]")).getText(), "Notice Period (days) cannot be empty.");
-		
+		softAssert.assertEquals(driver.findElement(By.xpath("//span[@data-zcqa=\"Notice_PeriodError\"]")).getText(), "Notice Period (days) cannot be empty.");	
 		softAssert.assertEquals(driver.findElement(By.xpath("//span[@data-zcqa=\"Reason_for_changeError\"]")).getText(), "Reason for change cannot be empty.");
 		
 		driver.findElement(By.id("rec-form_53264000000279009")).sendKeys(" For Personal growth ");
@@ -169,7 +165,6 @@ public class Regression {
 		
 	}
 		
-	
 	@AfterTest
 	public void tearDown() {
 		driver.quit();	
