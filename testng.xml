@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+	<!--  <parameter name = "Street" value="Kadepathar road"/>
+	  <parameter name = "City" value="Pune"/>
+	  <parameter name = "State" value="Maharashtra"/>
+	  <parameter name = "Pin" value="412303"/>
+	  <parameter name = "Country" value="412303"/>
+	  <parameter name = "OrgName" value="Roxiler"/>
+	  <parameter name = "Skill" value="sel"/>  -->
+	  
+    <classes>
+      <class name="Numadics.QATest.Regression">
+      	
+      </class>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
